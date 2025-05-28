@@ -1,0 +1,29 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  <h1>Zoopedia 🦁</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Region</th>
+        <th>Biome</th>
+        <th>Status</th>
+        <th>Fame</th>
+        <th>Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for animal in animals -%}
+        <tr>
+          <td>{{ animal.name }}</td>
+          <td>{{ animal.region }}</td>
+          <td>{{ animal.biome }}</td>
+          <td>{{ animal.status }}</td>
+          <td>{{ animal.fame }}</td>
+          <td>{{ animal.cost }}</td>
+        </tr>
+      {%- endfor %}
+    </tbody>
+  </table>
+{% endblock %}

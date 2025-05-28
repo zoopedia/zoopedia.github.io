@@ -1,0 +1,26 @@
+{
+  "name": "zoopedia",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node src/build.js",
+    "start": "serve docs"
+  },
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-css-order",
+      "prettier-plugin-packagejson",
+      "prettier-plugin-organize-imports"
+    ]
+  },
+  "dependencies": {
+    "serve": "14.2.4"
+  },
+  "devDependencies": {
+    "nunjucks": "3.2.4",
+    "prettier-plugin-css-order": "2.1.2",
+    "prettier-plugin-organize-imports": "4.1.0",
+    "prettier-plugin-packagejson": "2.5.14"
+  }
+}

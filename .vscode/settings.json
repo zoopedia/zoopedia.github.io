@@ -1,11 +1,19 @@
 {
+  "[njk]": {
+    "editor.defaultFormatter": "douglaszaltron.nunjucks-vscode-extensionpack"
+  },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "emmet.includeLanguages": {
-    "njk": "html"
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": "\\.njk$",
+        "cmd": "npm run build"
+      }
+    ]
   },
   "files.associations": {
-    "*.html": "njk"
+    "*.html": "html"
   },
   "files.eol": "\n",
   "files.insertFinalNewline": true,
