@@ -36,11 +36,10 @@ td div {
   align-items: center;
 }
 td div img {
-  margin-right: 0.25em;
   height: 1.5em;
 }
-td div.fame img {
-  margin-right: 0;
+td div.biome img {
+  margin-right: 0.25em;
 }
 td div.fame img ~ img {
   margin-left: -0.1em;

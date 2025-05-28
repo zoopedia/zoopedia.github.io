@@ -34,12 +34,15 @@ td {
     display: flex;
     align-items: center;
     img {
-      margin-right: 0.25em;
       height: 1.5em;
+    }
+    &.biome {
+      img {
+        margin-right: 0.25em;
+      }
     }
     &.fame {
       img {
-        margin-right: 0;
         ~ img {
           margin-left: -0.1em;
         }

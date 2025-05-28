@@ -21,7 +21,8 @@ async function build() {
 
 async function buildCss() {
   const sass = await readFile(join(src, "styles/main.scss"));
-  return compileString(sass.toString()).css;
+  const css = compileString(sass.toString()).css;
+  return await prettier.format(css, { parser: "css" });
 }
 
 async function buildHtml() {

@@ -5,7 +5,7 @@
   <table>
     <thead>
       <tr>
-        <th>Name</th>
+        <th>Animal</th>
         <th>Region</th>
         <th>Biome</th>
         <th>Status</th>
@@ -29,15 +29,19 @@
           <td>{{ animal.status }}</td>
           <td>
             <div class="fame" data-fame="{{ animal.fame }}">
-              {% for i in range(animal.fame | round(0, "floor")) %}
-                <img src="images/fame/full-star.png" alt="">
-              {% endfor %}
-              {% if animal.fame % 1 === 0.5 %}
-                <img src="images/fame/half-star.png" alt="">
-              {% endif %}
-              {% for i in range(5 - (animal.fame | round(0, "ceil"))) %}
-                <img src="images/fame/empty-star.png" alt="">
-              {% endfor %}
+              <div aria-label="{{ animal.fame }}">
+                <div aria-hidden="true">
+                  {%- for i in range(animal.fame | round(0, "floor")) %}
+                    <img src="images/fame/full-star.png" alt="">
+                  {%- endfor %}
+                  {%- if animal.fame % 1 === 0.5 %}
+                    <img src="images/fame/half-star.png" alt="">
+                  {%- endif %}
+                  {%- for i in range(5 - (animal.fame | round(0, "ceil"))) %}
+                    <img src="images/fame/empty-star.png" alt="">
+                  {%- endfor %}
+                </div>
+              </div>
             </div>
           </td>
           <td>
