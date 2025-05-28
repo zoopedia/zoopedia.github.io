@@ -1,3 +1,5 @@
+$border: 1px solid #3a6152;
+
 body {
   cursor: url("/images/arrow.cur"), auto;
   background-color: #8fb1ab;
@@ -16,7 +18,7 @@ body {
 table,
 th,
 td {
-  border: 1px solid #3a6152;
+  border: $border;
 }
 
 table {
@@ -35,8 +37,15 @@ td {
     display: flex;
     align-items: center;
     img {
-      margin-right: 0.25em;
-      height: 1.5em;
+      box-sizing: border-box;
+      margin: 0.1em 0.3em 0.1em 0.1em;
+      height: 2em;
+    }
+    &.animal {
+      img {
+        border: $border;
+        background-color: rgba($color: #000000, $alpha: 0.25);
+      }
     }
     &.fame {
       img {

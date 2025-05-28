@@ -35,7 +35,7 @@ env.addFilter("localeString", function (number) {
 });
 
 env.addFilter("imageName", function (name) {
-  return name.toLowerCase().replaceAll(" ", "");
+  return name.toLowerCase().replaceAll(/[^a-z]/g, "");
 });
 
 await build();

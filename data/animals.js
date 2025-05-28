@@ -370,7 +370,7 @@ export const animals = [
   },
   {
     pack: "EA",
-    name: "Dwarf Scillian Elephant",
+    name: "Dwarf Sicilian Elephant",
     region: "Mediterranean Isles",
     biome: "Grassland",
     status: 0,
@@ -892,7 +892,7 @@ export const animals = [
   },
   {
     pack: "EA",
-    name: "Sabre-Toothed Cat",
+    name: "Saber-Toothed Cat",
     region: "North America",
     biome: "Boreal Forest",
     status: 0,
@@ -1153,7 +1153,7 @@ export const animals = [
   },
   {
     pack: "EA",
-    name: "Woolly Rhinoceros",
+    name: "Wooly Rhinoceros",
     region: "Eurasia",
     biome: "Tundra",
     status: 0,

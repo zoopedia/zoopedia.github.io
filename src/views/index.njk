@@ -16,7 +16,13 @@
     <tbody>
       {% for animal in animals -%}
         <tr>
-          <td>{{ animal.name }}</td>
+          <td>
+            {% set name = animal.name %}
+            <div class="animal">
+              <img src="images/animal/{{ name | imageName }}.png" alt="">
+              <span>{{ name }}</span>
+            </div>
+          </td>
           <td>
             {{ animal.region }}
           </td>
