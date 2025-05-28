@@ -36,7 +36,8 @@ td {
     img {
       height: 1.5em;
     }
-    &.biome {
+    &.biome,
+    &.status {
       img {
         margin-right: 0.25em;
       }

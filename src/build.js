@@ -34,4 +34,8 @@ env.addFilter("localeString", function (number) {
   return number.toLocaleString();
 });
 
+env.addFilter("imageName", function (name) {
+  return name.toLowerCase().replaceAll(" ", "");
+});
+
 await build();

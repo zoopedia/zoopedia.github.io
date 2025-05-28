@@ -38,7 +38,8 @@ td div {
 td div img {
   height: 1.5em;
 }
-td div.biome img {
+td div.biome img,
+td div.status img {
   margin-right: 0.25em;
 }
 td div.fame img ~ img {

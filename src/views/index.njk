@@ -21,23 +21,32 @@
             {{ animal.region }}
           </td>
           <td>
+            {% set biome = animal.biome %}
             <div class="biome">
-              <img src="images/biome/{{ animal.biome | lower | replace(' ', '')}}.png" alt="">
-              <span>{{ animal.biome }}</span>
+              <img src="images/biome/{{ biome | imageName }}.png" alt="">
+              <span>{{ biome }}</span>
             </div>
           </td>
-          <td>{{ animal.status }}</td>
           <td>
-            <div class="fame" data-fame="{{ animal.fame }}">
-              <div aria-label="{{ animal.fame }}">
+            {% set statuses = ["Extinct", "Critical", "Endangered", "Vulnerable", "Low Risk"] %}
+            {% set status = statuses[animal.status] %}
+            <div class="status">
+              <img src="images/status/{{ status | imageName }}.png" alt="">
+              <span>{{ status }}</span>
+            </div>
+          </td>
+          <td>
+            {% set fame = animal.fame %}
+            <div class="fame" data-fame="{{ fame }}">
+              <div aria-label="{{ fame }}">
                 <div aria-hidden="true">
-                  {%- for i in range(animal.fame | round(0, "floor")) %}
+                  {%- for i in range(fame | round(0, "floor")) %}
                     <img src="images/fame/full-star.png" alt="">
                   {%- endfor %}
-                  {%- if animal.fame % 1 === 0.5 %}
+                  {%- if fame % 1 === 0.5 %}
                     <img src="images/fame/half-star.png" alt="">
                   {%- endif %}
-                  {%- for i in range(5 - (animal.fame | round(0, "ceil"))) %}
+                  {%- for i in range(5 - (fame | round(0, "ceil"))) %}
                     <img src="images/fame/empty-star.png" alt="">
                   {%- endfor %}
                 </div>
@@ -45,9 +54,10 @@
             </div>
           </td>
           <td>
+            {% set cost = animal.cost %}
             <div class="cost">
               <span class="cost-symbol">$</span>
-              <span class="cost-amount">{{ animal.cost | localeString }}</span>
+              <span class="cost-amount">{{ cost | localeString }}</span>
             </div>
           </td>
         </tr>
