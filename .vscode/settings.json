@@ -7,7 +7,7 @@
   "emeraldwalk.runonsave": {
     "commands": [
       {
-        "match": "\\.njk$",
+        "match": ".*",
         "cmd": "npm run build"
       }
     ]

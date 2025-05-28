@@ -1,7 +1,7 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-  <h1>Zoopedia 🦁</h1>
+  <h1><img src="images/logo.png" alt="Zoo Tycoon 2"></h1>
   <table>
     <thead>
       <tr>
@@ -17,11 +17,35 @@
       {% for animal in animals -%}
         <tr>
           <td>{{ animal.name }}</td>
-          <td>{{ animal.region }}</td>
-          <td>{{ animal.biome }}</td>
+          <td>
+            {{ animal.region }}
+          </td>
+          <td>
+            <div class="biome">
+              <img src="images/biome/{{ animal.biome | lower | replace(' ', '')}}.png" alt="">
+              <span>{{ animal.biome }}</span>
+            </div>
+          </td>
           <td>{{ animal.status }}</td>
-          <td>{{ animal.fame }}</td>
-          <td>{{ animal.cost }}</td>
+          <td>
+            <div class="fame" data-fame="{{ animal.fame }}">
+              {% for i in range(animal.fame | round(0, "floor")) %}
+                <img src="images/fame/full-star.png" alt="">
+              {% endfor %}
+              {% if animal.fame % 1 === 0.5 %}
+                <img src="images/fame/half-star.png" alt="">
+              {% endif %}
+              {% for i in range(5 - (animal.fame | round(0, "ceil"))) %}
+                <img src="images/fame/empty-star.png" alt="">
+              {% endfor %}
+            </div>
+          </td>
+          <td>
+            <div class="cost">
+              <span class="cost-symbol">$</span>
+              <span class="cost-amount">{{ animal.cost | localeString }}</span>
+            </div>
+          </td>
         </tr>
       {%- endfor %}
     </tbody>
